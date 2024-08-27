@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Estilos básicos */
 body {
   font-family: Arial, sans-serif;
@@ -12,6 +10,7 @@ body {
   align-items: center;
   height: 100vh;
   transition: background-color 0.3s, color 0.3s;
+  flex-direction: column; /* Asegura que el contenido se apile verticalmente */
 }
 
 .container {
@@ -129,6 +128,7 @@ body.dark-mode {
   display: flex;
   align-items: center;
 }
+
 .music-switch {
   position: absolute;
   top: 20px;
@@ -189,9 +189,28 @@ input:checked + .slider:before {
 
 /* Responsive */
 @media (max-width: 768px) {
+  body {
+    justify-content: flex-start; /* Asegura que los elementos estén alineados hacia la parte superior */
+  }
+
   .container {
     flex-direction: column;
     align-items: stretch;
+    padding: 20px;
+    margin-top: 70px; /* Deja espacio para los interruptores */
+  }
+
+  .botones {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-encriptar,
+  .btn-desencriptar {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 20px;
   }
 
   .encriptar,
@@ -199,17 +218,40 @@ input:checked + .slider:before {
     width: 100%;
     margin-bottom: 30px;
   }
+}
 
-  .botones {
-    flex-direction: column;
+@media (max-width: 480px) {
+  body {
+    justify-content: flex-start; /* Asegura que los elementos estén alineados hacia la parte superior */
+  }
+
+  .container {
+    padding: 15px;
+    margin-top: 80px; /* Deja espacio para los interruptores */
+  }
+
+  .texto {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  .terminos {
+    font-size: 16px;
   }
 
   .btn-encriptar,
   .btn-desencriptar {
-    width: 100%;
-    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 18px;
   }
+
+  #titulo-mensaje {
+    font-size: 22px;
+  }
+
+  #parrafo {
+    font-size: 18px;
+  }
+
+ 
 }
-
-/* Estilos del interruptor */
-
